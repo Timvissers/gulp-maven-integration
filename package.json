@@ -1,0 +1,14 @@
+{
+  "name": "gulp-maven-integration",
+  "version": "1.0.0",
+  "description": "Call maven from gulp",
+  "author": "Jeroen Baekelandt",
+  "license": "BSD-2-Clause",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "check-if-windows": "^1.0.0"
+  }
+}
