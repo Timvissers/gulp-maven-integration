@@ -6,6 +6,6 @@ Call maven targets from Gulp
 
 var mavenTask = require('gulp-maven-integration');
 
-mavenTask('<Name for the maven configuration>', '<maven goals to execute>', 'current working dir');
+mavenTask('name for the maven configuration', 'maven goals to execute', 'current working dir');
 
 eg. mavenTask('Clean Install MyProject', 'clean install');
