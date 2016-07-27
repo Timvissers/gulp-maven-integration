@@ -11,7 +11,7 @@ var gt = function(name, args, cwd, dependencies) {
     if (cwd != null) {
         opts.cwd = cwd;
     }
-	if(dependencies == null) {
+	if(!dependencies) {
 		dependencies = [];
 	}
     gulp.task(name, dependencies, function () {
