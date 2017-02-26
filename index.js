@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var spawn = require('child_process').spawn;
 var isWindows = require('check-if-windows');
+var fs = require('fs');
 
 var gt = function(name, args, cwd, dependencies) {
     var opts = {
@@ -11,12 +12,18 @@ var gt = function(name, args, cwd, dependencies) {
     if (cwd != null) {
         opts.cwd = cwd;
     }
-	if(!dependencies) {
-		dependencies = [];
-	}
+    if(!dependencies) {
+        dependencies = [];
+    }
     gulp.task(name, dependencies, function () {
         if (isWindows) {
-            spawn('mvn.bat', args.split(' '), opts);
+            fs.stat('mvn.cmd', function(error) {
+                if(error == null){
+                    spawn('mvn.cmd', args.split(' '), opts);
+                } else {
+                    spawn('mvn.bat', args.split(' '), opts);
+                }
+            }
         } else {
             spawn('bash', ['-lc', 'mvn ' + args], opts);
         }
