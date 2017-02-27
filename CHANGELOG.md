@@ -1,6 +1,7 @@
-# 1.1.0
+# 2.0.0
+## Breaking changes
+- On windows, maven >= 3.3.0 is needed
 ## Features
-- Support for maven 3.3 and higher on windows
 - Possibility to provide gulp dependencies (tasks)
 
 # 1.0.0

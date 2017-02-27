@@ -17,13 +17,7 @@ var gt = function(name, args, cwd, dependencies) {
     }
     gulp.task(name, dependencies, function () {
         if (isWindows) {
-            fs.stat('mvn.cmd', function(error) {
-                if(error == null){
-                    spawn('mvn.cmd', args.split(' '), opts);
-                } else {
-                    spawn('mvn.bat', args.split(' '), opts);
-                }
-            }
+            spawn('mvn.cmd', args.split(' '), opts);
         } else {
             spawn('bash', ['-lc', 'mvn ' + args], opts);
         }
